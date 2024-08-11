@@ -14,7 +14,8 @@ def convert_markdown_to_html(input_file, output_file):
     """
     # Check that the Markdown file exists and is a file
     if not (os.path.exists(input_file) and os.path.isfile(input_file)):
-        print(f"Missing {input_file}", file=sys.stderr)
+        print("Missing {} ".format(input_file), file=sys.stderr)
+
         sys.exit(1)
 
     # Read the Markdown file and convert it to HTML
@@ -26,7 +27,8 @@ def convert_markdown_to_html(input_file, output_file):
             if match:
                 heading_level = len(match.group(1))
                 heading_text = match.group(2)
-                html_lines.append(f"<h{heading_level}>{heading_text}</h{heading_level}>")
+                html_lines.append("<h{0}>{1}</h{0}>".format(heading_level, heading_text))
+
             else:
                 html_lines.append(line.rstrip())
 
