@@ -12,10 +12,10 @@ if __name__ == '__main__':
             if len(sys.argv[1:]) != 2:
                         print('Usage: ./markdown2html.py README.md README.html',
                                               file=sys.stderr)
-                                sys.exit(1)
+                        sys.exit(1)
 
                                     # Store the arguments into variables
-                                        input_file = sys.argv[1]
+                                    input_file = sys.argv[1]
                                             output_file = sys.argv[2]
 
                                                 # Checks that the markdown file exists and is a file
